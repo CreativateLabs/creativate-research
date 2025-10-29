@@ -1,0 +1,8 @@
+site_name: Creativate Research
+theme:
+  name: mkdocs
+nav:
+  - Home: index.md
+  - Eval Toolkit: evalkit.md
+  - Datasets: datasets.md
+  - Papers: papers.md

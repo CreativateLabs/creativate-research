@@ -1,0 +1,30 @@
+name: Paper PDF
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Typst
+        uses: typst/community-setup@v3
+        with:
+          typst-version: latest
+      - name: Build PDF
+        run: |
+          typst compile papers/paper1_nen_uqxai/main.typ paper.pdf
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper-pdf
+          path: paper.pdf
+      - name: Create/Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: paper.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

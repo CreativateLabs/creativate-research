@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.build/
+dist/
+.venv/
+venv/
+# Notebooks
+*.ipynb_checkpoints
+# OS
+.DS_Store
+# Typst/LaTeX
+*.aux
+*.log
+# DVC (do keep .dvc files and .dvc/config)
+**/.dvc/tmp/
+**/.dvc/cache/

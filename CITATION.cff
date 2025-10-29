@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Creativate OSS Evaluation Toolkit"
+authors:
+  - family-names: "Bornhäußer"
+    given-names: "Leonardo"
+license: MIT
+version: 0.1.0
+date-released: "2025-10-29"
+repository-code: "https://github.com/creativate-ai/creativate-research"

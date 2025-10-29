@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evalkit"
+version = "0.1.0"
+description = "Creativate OSS Evaluation Toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+scripts = { evalkit = "evalkit.cli:main" }
