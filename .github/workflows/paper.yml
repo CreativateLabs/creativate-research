@@ -3,10 +3,10 @@ name: Paper PDF
 on:
   push:
     tags:
-      - "v*"        # only run on version tags (e.g. v0.1.4)
+      - "v*"
 
 permissions:
-  contents: write   # needed to attach paper.pdf to the Release
+  contents: write
 
 jobs:
   build-paper:
@@ -23,7 +23,7 @@ jobs:
       - name: Build PDF
         run: |
           typst --version
-          typst compile papers/main.typ paper.pdf
+          typst compile papers/paper1_nen_uqxai/main.typ paper.pdf
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
