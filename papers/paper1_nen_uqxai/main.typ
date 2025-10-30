@@ -22,7 +22,7 @@ NEN models an enterprise as interacting clusters. Each cluster holds domain-spec
 
 === Architecture Overview
 #figure(
-  image("../../../figures/nen_architecture_v3.png"),
+  image("../../figures/nen_architecture_0.0.1.png"),
   caption: "Neural Enterprise Network (NEN) — exported from the Creativate research vault."
 )
 
