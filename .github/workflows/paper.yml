@@ -1,35 +1,20 @@
 name: Paper PDF
-
 on:
   push:
     tags:
-      - 'v*'   # runs only when you push a tag like v0.1.1
-
+      - 'v*'
 permissions:
-  contents: write   # needed so we can create/update the GitHub Release
-
+  contents: write
 jobs:
   build-paper:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      # ✅ Correct Typst setup action (note the repo name)
+        with: { fetch-depth: 0 }
       - name: Install Typst
         uses: typst-community/setup-typst@v3
-
       - name: Build PDF
         run: typst compile papers/paper1_nen_uqxai/main.typ paper.pdf
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: paper-pdf
-          path: paper.pdf
-
-      # Creates or updates the Release for this tag -> Zenodo will archive it
       - name: Create/Update GitHub Release
         uses: softprops/action-gh-release@v2
         with:
