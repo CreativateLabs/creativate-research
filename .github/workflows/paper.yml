@@ -1,9 +1,8 @@
-name: Paper PDF
 
+name: Paper PDF
 on:
   push:
-    tags:
-      - "v*"
+    tags: ["v*"]
 
 permissions:
   contents: write
@@ -11,37 +10,28 @@ permissions:
 jobs:
   build-paper:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        paper_path:
+          - papers/paper1_nen_uqxai/main.typ
+          - papers/paper2_cluster_forecasting/main.typ
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Install Typst
-        uses: typst-community/setup-typst@v3
-
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: typst-community/setup-typst@v3
       - name: Debug tree
-        run: |
-            pwd
-            ls -lah
-            echo "--- papers/paper1_nen_uqxai ---"
-            ls -lah papers/paper1_nen_uqxai || true
-            echo "--- figures ---"
-            ls -lah figures || true
-
-
+        run: ls -la $(dirname "${{ matrix.paper_path }}")
       - name: Build PDF
         run: |
+          out="paper-$(basename $(dirname "${{ matrix.paper_path }}")).pdf"
           typst --version
-          typst compile --root . papers/paper1_nen_uqxai/main.typ paper.pdf
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+          typst compile "${{ matrix.paper_path }}" "$out"
+          ls -lh "$out"
+      - uses: actions/upload-artifact@v4
         with:
-          name: paper-pdf
-          path: paper.pdf
-
-      - name: Create/Update GitHub Release
+          name: paper-pdfs
+          path: paper-*.pdf
+      - name: Attach PDFs to Release
         uses: softprops/action-gh-release@v2
         with:
-          files: paper.pdf
+          files: paper-*.pdf
