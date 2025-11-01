@@ -1,0 +1,21 @@
+
+{
+  "title": "Neural Enterprise Network (NEN) v1.x — Open Evaluation & Research Toolkit for Uncertainty-Aware Decision Intelligence",
+  "upload_type": "software",
+  "description": "<p>This release provides the first open research artifact of the <b>Neural Enterprise Network (NEN)</b> — a cluster-based architecture for organizational decision intelligence with explainability and uncertainty built-in.</p><ul><li><b>Outline & Figure:</b> conceptual basis (papers/paper1_nen_uqxai/outline.md; figures/nen_architecture_0.0.1.png)</li><li><b>Evaluation toolkit:</b> reproducible metrics (MAE, SMAPE, ECE, CRPS)</li><li><b>Typst paper draft:</b> reproducible doc pipeline (papers/paper1_nen_uqxai/main.typ → paper.pdf)</li></ul><p>Production implementations remain proprietary; this release covers open research components only.</p>",
+  "creators": [
+    {"name": "Bornhäußer, Leonardo", "affiliation": "Creativate Research Group"},
+    {"name": "Cakar, Tuna", "affiliation": "Creativate Research Group"}
+  ],
+  "license": "MIT",
+  "keywords": ["decision intelligence","explainable AI","uncertainty quantification","AI governance","organizational learning","forecasting","evaluation toolkit","open science","EU AI Act"],
+  "related_identifiers": [
+    {"identifier": "https://github.com/CreativateLabs/creativate-research", "relation": "isSupplementTo", "resource_type": "software"}
+  ],
+  "notes": "If you use this work, please cite as: Bornhäußer, L., & Cakar, T. (2025). Neural Enterprise Network (NEN) — Open Evaluation & Research Toolkit for Uncertainty-Aware Decision Intelligence. Zenodo. https://doi.org/10.5281/zenodo.TBD",
+  "contributors": [{"name": "Creativate Labs", "type": "Other"}],
+  "communities": [{"identifier": "open-science"}],
+  "version": "v0.1.13",
+  "access_right": "open",
+  "language": "eng"
+}
