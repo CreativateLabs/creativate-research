@@ -20,6 +20,16 @@ jobs:
       - name: Install Typst
         uses: typst-community/setup-typst@v3
 
+      - name: Debug tree
+        run: |
+            pwd
+            ls -lah
+            echo "--- papers/paper1_nen_uqxai ---"
+            ls -lah papers/paper1_nen_uqxai || true
+            echo "--- figures ---"
+            ls -lah figures || true
+
+
       - name: Build PDF
         run: |
           typst --version
