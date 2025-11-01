@@ -1,10 +1,14 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-title: "Creativate OSS Evaluation Toolkit"
+message: "If you use this toolkit, please cite it as below."
+title: "Neural Enterprise Network (NEN) — Open Evaluation & Research Toolkit"
 authors:
-  - family-names: "Bornhäußer"
-    given-names: "Leonardo"
-license: MIT
-version: 0.1.0
-date-released: "2025-10-29"
-repository-code: "https://github.com/creativate-ai/creativate-research"
+  - family-names: Bornhäußer
+    given-names: Leonardo
+    affiliation: Creativate Research Group
+  - family-names: Cakar
+    given-names: Tuna
+    affiliation: Creativate Research Group
+version: "0.1.13"
+date-released: "2025-11-01"
+doi: "10.5281/zenodo.TBD"
+url: "https://github.com/CreativateLabs/creativate-research"
